@@ -16,7 +16,6 @@ summary = summarizer(parser.document, 5) #Summarize the document with 5 sentence
 for sentence in summary:
     print (sentence)
 """
-# -*- coding: utf-8 -*-
 
 from __future__ import absolute_import
 from __future__ import division, print_function, unicode_literals
@@ -24,7 +23,7 @@ from __future__ import division, print_function, unicode_literals
 from parsers.html import HtmlParser
 from parsers.plaintext import PlaintextParser
 from nlp.tokenizers import Tokenizer
-from summarizers.lex_rank import LexRankSummarizer as Summarizer
+from summarizers.lex_rank import LsaSummarizer as Summarizer
 from nlp.stemmers import Stemmer
 from utils import get_stop_words
 

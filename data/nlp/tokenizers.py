@@ -6,10 +6,9 @@ from __future__ import division, print_function, unicode_literals
 import re
 import zipfile
 import nltk
-import sys
-sys.path.append('..')
-from _compat import to_string, to_unicode, unicode
-from utils import normalize_language
+
+from .._compat import to_string, to_unicode, unicode
+from ..utils import normalize_language
 
 
 class DefaultWordTokenizer(object):

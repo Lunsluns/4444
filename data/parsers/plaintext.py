@@ -2,13 +2,12 @@
 
 from __future__ import absolute_import
 from __future__ import division, print_function, unicode_literals
-import sys
-sys.path.append('..')
-from _compat import to_unicode
-from utils import cached_property
-from models.dom._sentence import Sentence
-from models.dom._paragraph import Paragraph
-from models.dom._document import ObjectDocumentModel
+
+from .._compat import to_unicode
+from ..utils import cached_property
+from ..models.dom._sentence import Sentence
+from ..models.dom._paragraph import Paragraph
+from ..models.dom._document import ObjectDocumentModel
 from .parser import DocumentParser
 
 

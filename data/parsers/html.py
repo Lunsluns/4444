@@ -4,13 +4,11 @@ from __future__ import absolute_import
 from __future__ import division, print_function, unicode_literals
 
 from breadability.readable import Article
-import sys
-sys.path.append('..')
-from utils import cached_property, fetch_url
-from models.dom._sentence import Sentence
-from models.dom._paragraph import Paragraph
-from models.dom._document import ObjectDocumentModel
-from .parser import DocumentParser
+from ..utils import cached_property, fetch_url
+from .models.dom._sentence import Sentence
+from .models.dom._paragraph import Paragraph
+from .models.dom._document import ObjectDocumentModel
+from parser import DocumentParser
 
 
 class HtmlParser(DocumentParser):

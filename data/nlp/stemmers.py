@@ -5,10 +5,9 @@ from __future__ import division, print_function, unicode_literals
 
 import nltk.stem.snowball as nltk_stemmers_module
 
-import sys
-sys.path.append('..')
-from _compat import to_unicode
-from utils import normalize_language
+
+from .._compat import to_unicode
+from ..utils import normalize_language
 
 
 def null_stemmer(object):

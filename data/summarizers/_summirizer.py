@@ -6,11 +6,9 @@ from __future__ import division, print_function, unicode_literals
 
 from collections import namedtuple
 from operator import attrgetter
-import sys
-sys.path.append('..')
-from utils import ItemsCount
-from _compat import to_unicode
-from nlp.stemmers import null_stemmer
+from ..utils import ItemsCount
+from .._compat import to_unicode
+from ..nlp.stemmers import null_stemmer
 
 
 SentenceInfo = namedtuple("SentenceInfo", ("sentence", "order", "rating",))

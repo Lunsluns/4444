@@ -2,11 +2,9 @@
 
 from __future__ import absolute_import
 from __future__ import division, print_function, unicode_literals
-from ._summirizer import AbstractSummarizer
-import sys
-sys.path.append('..')
-from models.tf import TfDocumentModel
 
+from ..models.tf import TfDocumentModel
+from ._summirizer import AbstractSummarizer
 
 
 class LuhnSummarizer(AbstractSummarizer):
