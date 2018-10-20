@@ -24,7 +24,9 @@ from __future__ import division, print_function, unicode_literals
 from parsers.html import HtmlParser
 from parsers.plaintext import PlaintextParser
 from nlp.tokenizers import Tokenizer
-from summarizers.lex_rank import LexRankSummarizer as Summarizer
+from summarizers.lex_rank import LexRankSummarizer as lexSum
+from summarizers.luhn import LuhnSummarizer as luhnSum
+from summarizers.text_rank import TextRankSummarizer as textSum
 from nlp.stemmers import Stemmer
 from utils import get_stop_words
 
@@ -41,7 +43,25 @@ if __name__ == "__main__":
     # parser = PlaintextParser.from_file("document.txt", Tokenizer(LANGUAGE))
     stemmer = Stemmer(LANGUAGE)
 
-    summarizer = Summarizer(stemmer)
+    summarizer = lexSum(stemmer)
+    summarizer.stop_words = get_stop_words(LANGUAGE)
+
+    for sentence in summarizer(parser.document, SENTENCES_COUNT):
+        print(sentence)
+
+    print('')
+    print('')
+    
+    summarizer = luhnSum(stemmer)
+    summarizer.stop_words = get_stop_words(LANGUAGE)
+
+    for sentence in summarizer(parser.document, SENTENCES_COUNT):
+        print(sentence)
+
+    print('')
+    print('')
+
+    summarizer = textSum(stemmer)
     summarizer.stop_words = get_stop_words(LANGUAGE)
 
     for sentence in summarizer(parser.document, SENTENCES_COUNT):
