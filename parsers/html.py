@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 
 from __future__ import absolute_import
 from __future__ import division, print_function, unicode_literals
@@ -12,10 +11,9 @@ from models.dom._paragraph import Paragraph
 from models.dom._document import ObjectDocumentModel
 from .parser import DocumentParser
 
-
+#parses the HTML text into DOM
 class HtmlParser(DocumentParser):
-    """Parser of text from HTML format into DOM."""
-
+    #significant html tags
     SIGNIFICANT_TAGS = (
         "h1", "h2", "h3",
         "b", "strong",

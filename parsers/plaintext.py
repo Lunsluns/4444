@@ -1,9 +1,9 @@
-# -*- coding: utf-8 -*-
+#We probably dont need this
 
 from __future__ import absolute_import
 from __future__ import division, print_function, unicode_literals
 import sys
-sys.path.append('..')
+'''sys.path.append('..')
 from _compat import to_unicode
 from utils import cached_property
 from models.dom._sentence import Sentence
@@ -102,4 +102,4 @@ class PlaintextParser(DocumentParser):
 
     def _to_sentence(self, text):
         assert text.strip()
-        return Sentence(text, self._tokenizer)
+        return Sentence(text, self._tokenizer) '''

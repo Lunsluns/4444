@@ -4,7 +4,7 @@ from __future__ import absolute_import
 from __future__ import division, print_function, unicode_literals
 
 from parsers.html import HtmlParser
-from parsers.plaintext import PlaintextParser
+#from parsers.plaintext import PlaintextParser
 from nlp.tokenizers import Tokenizer
 from summarizers.lex_rank import LexRankSummarizer as lexSum
 from summarizers.luhn import LuhnSummarizer as luhnSum
@@ -19,7 +19,7 @@ SENTENCES_COUNT = 10
 
 if __name__ == "__main__":
     #url = "http://www.zsstritezuct.estranky.cz/clanky/predmety/cteni/jak-naucit-dite-spravne-cist.html"
-    url = "https://www.pokemon.com/us/pokemon-news/pokemons-spookiest-locales/"
+    url = "https://www.npr.org/2018/10/21/658921379/futuristic-dreams-turn-to-nightmare-in-electric-state"
     parser = HtmlParser.from_url(url, Tokenizer(LANGUAGE))
     # or for plain text files
     # parser = PlaintextParser.from_file("document.txt", Tokenizer(LANGUAGE))

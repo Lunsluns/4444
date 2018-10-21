@@ -1,28 +1,18 @@
 from __future__ import absolute_import
 from __future__ import division, print_function, unicode_literals
 
-# -*- coding: utf-8 -*-
 
 """
-Sumy - automatic text summarizer.
-
 Usage:
-    sumy (luhn | edmundson | lsa | text-rank | lex-rank | sum-basic | kl) [--length=<length>] [--language=<lang>] [--stopwords=<file_path>] [--format=<format>]
-    sumy (luhn | edmundson | lsa | text-rank | lex-rank | sum-basic | kl) [--length=<length>] [--language=<lang>] [--stopwords=<file_path>] [--format=<format>] --url=<url>
-    sumy (luhn | edmundson | lsa | text-rank | lex-rank | sum-basic | kl) [--length=<length>] [--language=<lang>] [--stopwords=<file_path>] [--format=<format>] --file=<file_path>
-    sumy (luhn | edmundson | lsa | text-rank | lex-rank | sum-basic | kl) [--length=<length>] [--language=<lang>] [--stopwords=<file_path>] [--format=<format>] --text=<text>
-    sumy --version
-    sumy --help
+   implements Luhn, TextRank and LexRank summarizers
 
 Options:
     --length=<length>        Length of summarized text. It may be count of sentences
                              or percentage of input text. [default: 20%]
-    --language=<lang>        Natural language of summarized text. [default: english]
     --stopwords=<file_path>  Path to a file containing a list of stopwords. One word per line in UTF-8 encoding.
                              If it's not provided default list of stop-words is used according to chosen language.
-    --format=<format>        Format of input document. Possible values: html, plaintext
-    --url=<url>              URL address of the web page to summarize.
-    --file=<file_path>       Path to the text file to summarize.
+    --format=<format>        Format of input document. This takes a URL.
+    --url=<url>              URL address of the web page to be summarized.
     --text=<text>            Raw text to summarize
     --version                Displays current application version.
     --help                   Displays this text.
@@ -35,7 +25,6 @@ from __future__ import division, print_function, unicode_literals
 import sys
 
 from docopt import docopt
-#from . import __version__
 from .utils import ItemsCount, get_stop_words, read_stop_words, fetch_url
 from ._compat import to_string, to_unicode, to_bytes, PY3
 from .nlp.tokenizers import Tokenizer

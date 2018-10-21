@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 
 from __future__ import absolute_import
 from __future__ import division, print_function, unicode_literals
@@ -11,7 +10,7 @@ from utils import cached_property
 #sys.path.append('.')
 from ._sentence import Sentence
 
-
+#this file handles sentences, headings and words, it defines the paragraph object
 @unicode_compatible
 class Paragraph(object):
     __slots__ = (
@@ -25,7 +24,7 @@ class Paragraph(object):
         sentences = tuple(sentences)
         for sentence in sentences:
             if not isinstance(sentence, Sentence):
-                raise TypeError("Only instances of class 'Sentence' are allowed.")
+                raise TypeError("Only instances of class 'Sentence' are allowed!")
 
         self._sentences = sentences
 

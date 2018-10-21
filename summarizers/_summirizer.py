@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 
 from __future__ import absolute_import
 from __future__ import division, print_function, unicode_literals
@@ -12,10 +11,10 @@ from utils import ItemsCount
 from _compat import to_unicode
 from nlp.stemmers import null_stemmer
 
-
+#basic summarazation methods used in every algorithm
 SentenceInfo = namedtuple("SentenceInfo", ("sentence", "order", "rating",))
 
-
+#abstract summarizaon methods
 class AbstractSummarizer(object):
     def __init__(self, stemmer=null_stemmer):
         if not callable(stemmer):

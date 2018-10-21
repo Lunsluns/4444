@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 
 from __future__ import absolute_import
 from __future__ import division, print_function, unicode_literals
@@ -9,7 +8,7 @@ sys.path.append('...')
 from utils import cached_property
 from _compat import unicode_compatible
 
-
+#this file handles document functions, such as returning and helping to interpret paragraphs, sentences, headings, words etc.
 @unicode_compatible
 class ObjectDocumentModel(object):
     def __init__(self, paragraphs):

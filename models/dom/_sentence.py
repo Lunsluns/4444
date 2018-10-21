@@ -7,7 +7,7 @@ sys.path.append('...')
 from utils import cached_property
 from _compat import to_unicode, to_string, unicode_compatible
 
-
+#defies a sentence object, retuns words, etc.
 @unicode_compatible
 class Sentence(object):
     __slots__ = ("_text", "_cached_property_words", "_tokenizer", "_is_heading",)
