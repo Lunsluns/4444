@@ -23,10 +23,20 @@ if __name__ == "__main__":
     #url = "https://www.npr.org/2018/10/21/658921379/futuristic-dreams-turn-to-nightmare-in-electric-state"
 
     root = Tk()
-    root.geometry("440x60")
+    root.title("")
+    #was 440, 60
+    root.geometry("440x100")
+
+
+    text = Text(root)
+    text.tag_config("c",justify = CENTER)
+    text.insert(INSERT, "Enter a URL for Summarization","c")
+    text.pack()
+
     #was 70
     e = Entry(root, width=45)
-    e.place(x=10, y=5)
+    #was 10, 5
+    e.place(x=10, y=25)
 
     e.focus_set()
 
@@ -41,6 +51,7 @@ if __name__ == "__main__":
         url = e.get()
         #root.destroy()
         newWindow = Tk()
+        newWindow.title("")
         newWindow.geometry("645x445")
         mainDisplay = Text(newWindow, wrap=WORD)
         buttonLex = Button(newWindow, text="LexRank", command=lambda: display(mainDisplay, HtmlParser.from_url(url, Tokenizer(LANGUAGE)), lexSum(Stemmer(LANGUAGE))))
@@ -55,6 +66,6 @@ if __name__ == "__main__":
 
     b = Button(root, text="Summarize", width=40, command=callback)
     #was 68, 30
-    b.place(x=44, y=35)
+    b.place(x=40, y=65)
 
     mainloop()
