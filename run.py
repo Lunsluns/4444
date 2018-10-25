@@ -24,7 +24,8 @@ if __name__ == "__main__":
 
     root = Tk()
     root.geometry("440x60")
-    e = Entry(root, width=70)
+    #was 70
+    e = Entry(root, width=45)
     e.place(x=10, y=5)
 
     e.focus_set()
@@ -38,19 +39,22 @@ if __name__ == "__main__":
 
     def callback():
         url = e.get()
+        #root.destroy()
         newWindow = Tk()
         newWindow.geometry("645x445")
         mainDisplay = Text(newWindow, wrap=WORD)
-        buttonLex = Button(newWindow, text="Lex", command=lambda: display(mainDisplay, HtmlParser.from_url(url, Tokenizer(LANGUAGE)), lexSum(Stemmer(LANGUAGE))))
-        buttonLex.place(x=260, y=10)
+        buttonLex = Button(newWindow, text="LexRank", command=lambda: display(mainDisplay, HtmlParser.from_url(url, Tokenizer(LANGUAGE)), lexSum(Stemmer(LANGUAGE))))
+        #was x= 260
+        buttonLex.place(x=230, y=10)
         buttonLuhn = Button(newWindow, text="Luhn", command=lambda: display(mainDisplay, HtmlParser.from_url(url, Tokenizer(LANGUAGE)), luhnSum(Stemmer(LANGUAGE))))
         buttonLuhn.place(x=300, y=10)
-        buttonText = Button(newWindow, text="Text", command=lambda: display(mainDisplay, HtmlParser.from_url(url, Tokenizer(LANGUAGE)), textSum(Stemmer(LANGUAGE))))
+        buttonText = Button(newWindow, text="TextRank", command=lambda: display(mainDisplay, HtmlParser.from_url(url, Tokenizer(LANGUAGE)), textSum(Stemmer(LANGUAGE))))
         buttonText.place(x=350, y=10)
         mainDisplay.place(x=0, y=50)
         newWindow.mainloop()
 
     b = Button(root, text="Summarize", width=40, command=callback)
-    b.place(x=68, y=30)
+    #was 68, 30
+    b.place(x=44, y=35)
 
     mainloop()
