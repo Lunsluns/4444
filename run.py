@@ -20,12 +20,12 @@ SENTENCES_COUNT = 10
 
 
 if __name__ == "__main__":
-    #url = "http://www.zsstritezuct.estranky.cz/clanky/predmety/cteni/jak-naucit-dite-spravne-cist.html"
-    url = "https://www.npr.org/2018/10/21/658921379/futuristic-dreams-turn-to-nightmare-in-electric-state"
+    #url = "https://www.npr.org/2018/10/21/658921379/futuristic-dreams-turn-to-nightmare-in-electric-state"
 
     root = Tk()
-    e = Entry(root)
-    e.pack()
+    root.geometry("440x60")
+    e = Entry(root, width=70)
+    e.place(x=10, y=5)
 
     e.focus_set()
 
@@ -39,17 +39,18 @@ if __name__ == "__main__":
     def callback():
         url = e.get()
         newWindow = Tk()
-        mainDisplay = Text(newWindow)
-        mainDisplay.pack()
+        newWindow.geometry("645x445")
+        mainDisplay = Text(newWindow, wrap=WORD)
         buttonLex = Button(newWindow, text="Lex", command=lambda: display(mainDisplay, HtmlParser.from_url(url, Tokenizer(LANGUAGE)), lexSum(Stemmer(LANGUAGE))))
-        buttonLex.pack()
+        buttonLex.place(x=260, y=10)
         buttonLuhn = Button(newWindow, text="Luhn", command=lambda: display(mainDisplay, HtmlParser.from_url(url, Tokenizer(LANGUAGE)), luhnSum(Stemmer(LANGUAGE))))
-        buttonLuhn.pack()
+        buttonLuhn.place(x=300, y=10)
         buttonText = Button(newWindow, text="Text", command=lambda: display(mainDisplay, HtmlParser.from_url(url, Tokenizer(LANGUAGE)), textSum(Stemmer(LANGUAGE))))
-        buttonText.pack()
+        buttonText.place(x=350, y=10)
+        mainDisplay.place(x=0, y=50)
         newWindow.mainloop()
 
     b = Button(root, text="Summarize", width=40, command=callback)
-    b.pack()
+    b.place(x=68, y=30)
 
     mainloop()
