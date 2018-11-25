@@ -1,32 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="3f7a34cb-cb09-472a-af78-73171110f05f" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/__main__.py" beforeDir="false" afterPath="$PROJECT_DIR$/__main__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_compat.py" beforeDir="false" afterPath="$PROJECT_DIR$/_compat.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/dom/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/dom/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/dom/_document.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/dom/_document.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/dom/_paragraph.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/dom/_paragraph.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/dom/_sentence.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/dom/_sentence.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/tf.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/tf.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nlp/stemmers.py" beforeDir="false" afterPath="$PROJECT_DIR$/nlp/stemmers.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nlp/tokenizers.py" beforeDir="false" afterPath="$PROJECT_DIR$/nlp/tokenizers.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/parsers/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/parsers/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/parsers/html.py" beforeDir="false" afterPath="$PROJECT_DIR$/parsers/html.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/parsers/parser.py" beforeDir="false" afterPath="$PROJECT_DIR$/parsers/parser.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/parsers/plaintext.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/run.py" beforeDir="false" afterPath="$PROJECT_DIR$/run.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/summarizers/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/summarizers/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/summarizers/_summirizer.py" beforeDir="false" afterPath="$PROJECT_DIR$/summarizers/_summirizer.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/summarizers/lex_rank.py" beforeDir="false" afterPath="$PROJECT_DIR$/summarizers/lex_rank.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/summarizers/luhn.py" beforeDir="false" afterPath="$PROJECT_DIR$/summarizers/luhn.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/summarizers/text_rank.py" beforeDir="false" afterPath="$PROJECT_DIR$/summarizers/text_rank.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/utils.py" afterDir="false" />
-    </list>
+    <list default="true" id="3f7a34cb-cb09-472a-af78-73171110f05f" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,8 +55,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/run.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="355">
-              <caret line="36" column="12" lean-forward="true" selection-start-line="36" selection-start-column="12" selection-end-line="36" selection-end-column="12" />
+            <state relative-caret-position="-109">
+              <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
               <folding>
                 <element signature="e#24#62#0" expanded="true" />
               </folding>
@@ -581,8 +556,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/run.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="355">
-          <caret line="36" column="12" lean-forward="true" selection-start-line="36" selection-start-column="12" selection-end-line="36" selection-end-column="12" />
+        <state relative-caret-position="-109">
+          <caret line="23" lean-forward="true" selection-start-line="23" selection-end-line="23" />
           <folding>
             <element signature="e#24#62#0" expanded="true" />
           </folding>

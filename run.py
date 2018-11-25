@@ -45,7 +45,7 @@ if __name__ == "__main__":
         url = e.get()
         #root.destroy()
         newWindow = Tk()
-        newWindow.title("")
+        newWindow.title("Click an Algorithm to View the Summarization")
         newWindow.geometry("645x445")
         mainDisplay = Text(newWindow, wrap=WORD)
         buttonLex = Button(newWindow, text="LexRank", command=lambda: display(mainDisplay, HtmlParser.from_url(url, Tokenizer(LANGUAGE)), lexSum(Stemmer(LANGUAGE))))
