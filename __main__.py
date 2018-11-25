@@ -1,7 +1,5 @@
 from __future__ import absolute_import
 from __future__ import division, print_function, unicode_literals
-
-
 """
 Usage:
    implements Luhn, TextRank and LexRank summarizers
@@ -18,21 +16,15 @@ Options:
     --help                   Displays this text.
 
 """
-
 from __future__ import absolute_import
 from __future__ import division, print_function, unicode_literals
-
 import sys
-
 from docopt import docopt
 from .utils import ItemsCount, get_stop_words, read_stop_words, fetch_url
 from ._compat import to_string, to_unicode, to_bytes, PY3
 from .nlp.tokenizers import Tokenizer
 from .parsers.html import HtmlParser
-from .parsers.plaintext import PlaintextParser
 from .summarizers.luhn import LuhnSummarizer
-
-
 from .summarizers.text_rank import TextRankSummarizer
 from .summarizers.lex_rank import LexRankSummarizer
 
@@ -42,7 +34,6 @@ __version__ = 3
 
 PARSERS = {
     "html": HtmlParser,
-    "plaintext": PlaintextParser,
 }
 
 AVAILABLE_METHODS = {

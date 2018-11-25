@@ -1,8 +1,5 @@
-
 from __future__ import absolute_import
 from __future__ import division, print_function, unicode_literals
-
-
 from collections import namedtuple
 from operator import attrgetter
 import sys
@@ -11,10 +8,10 @@ from utils import ItemsCount
 from _compat import to_unicode
 from nlp.stemmers import null_stemmer
 
-#basic summarazation methods used in every algorithm
+#basic information about sentences used in every algorithm
 SentenceInfo = namedtuple("SentenceInfo", ("sentence", "order", "rating",))
 
-#abstract summarizaon methods
+#abstract summarizaon methods, used for each algorithm
 class AbstractSummarizer(object):
     def __init__(self, stemmer=null_stemmer):
         if not callable(stemmer):

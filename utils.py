@@ -1,19 +1,15 @@
 # utilities
-
 from __future__ import absolute_import
 from __future__ import division, print_function, unicode_literals
-
 import sys
 import requests
 import pkgutil
-
 from functools import wraps
 from contextlib import closing
 from os.path import dirname, abspath, join, exists
 #from . import __version__
 sys.path.append('')
 from _compat import to_string, to_unicode, string_types
-
 from pycountry import languages
 
 _HTTP_HEADERS = {

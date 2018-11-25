@@ -1,5 +1,4 @@
 # this file analyzes term frequency
-
 from __future__ import absolute_import
 from __future__ import division, print_function, unicode_literals
 import math
@@ -13,7 +12,7 @@ class TfDocumentModel(object):
     def __init__(self, words, tokenizer=None):
         if isinstance(words, string_types) and tokenizer is None:
             raise ValueError(
-                "Tokenizer must be called if 'words' is not a sequence.")
+                "the tokenizer must be called if 'words' is not a sequence.")
         elif isinstance(words, string_types):
             words = tokenizer.to_words(to_unicode(words))
         elif not isinstance(words, Sequence):

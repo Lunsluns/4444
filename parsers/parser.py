@@ -2,9 +2,8 @@
 from __future__ import absolute_import
 from __future__ import division, print_function, unicode_literals
 
-
+#Converts text to the Document Object Model
 class DocumentParser(object):
-    """Abstract parser of input format into DOM."""
 
     def __init__(self, tokenizer):
         self._tokenizer = tokenizer

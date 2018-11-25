@@ -1,19 +1,13 @@
-# -*- coding: utf-8 -*-
-
 from __future__ import absolute_import
 from __future__ import division, print_function, unicode_literals
-
 from parsers.html import HtmlParser
-#from parsers.plaintext import PlaintextParser
 from nlp.tokenizers import Tokenizer
 from summarizers.lex_rank import LexRankSummarizer as lexSum
 from summarizers.luhn import LuhnSummarizer as luhnSum
 from summarizers.text_rank import TextRankSummarizer as textSum
 from nlp.stemmers import Stemmer
 from utils import get_stop_words
-
 from tkinter import *
-
 
 LANGUAGE = "english"
 SENTENCES_COUNT = 10

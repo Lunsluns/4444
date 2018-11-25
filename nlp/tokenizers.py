@@ -19,9 +19,8 @@ class DefaultWordTokenizer(object):
 class Tokenizer(object):
 
     _WORD_PATTERN = re.compile(r"^[^\W\d_]+$", re.UNICODE)
-    # feel free to contribute if you have better tokenizer for any of these languages :)
 
-    # improve tokenizer by adding specific abbreviations it has issues with
+    # improves tokenizer by adding specific abbreviations it has issues with
     # notes the final point in these items must not be included
     LANGUAGE_EXTRA_ABREVS = {
         "english": ["e.g", "al", "i.e"],

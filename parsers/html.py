@@ -1,7 +1,5 @@
-
 from __future__ import absolute_import
 from __future__ import division, print_function, unicode_literals
-
 from breadability.readable import Article
 import sys
 sys.path.append('..')
@@ -11,7 +9,7 @@ from models.dom._paragraph import Paragraph
 from models.dom._document import ObjectDocumentModel
 from .parser import DocumentParser
 
-#parses the HTML text into DOM
+#parses the HTML text from the article url into DOM
 class HtmlParser(DocumentParser):
     #significant html tags
     SIGNIFICANT_TAGS = (

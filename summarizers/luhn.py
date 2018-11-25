@@ -1,5 +1,3 @@
-# -*- coding: utf-8 -*-
-
 from __future__ import absolute_import
 from __future__ import division, print_function, unicode_literals
 from ._summirizer import AbstractSummarizer
@@ -7,8 +5,7 @@ import sys
 sys.path.append('..')
 from models.tf import TfDocumentModel
 
-
-
+#Luhn measures word significance by frequency
 class LuhnSummarizer(AbstractSummarizer):
     max_gap_size = 4
     # TODO: better recognition of significant words (automatic)
@@ -78,8 +75,8 @@ class LuhnSummarizer(AbstractSummarizer):
         else:
             return significant_words**2 / words_count
 
+    # Removes trailing zeroes from indexible collection of numbers
     def __remove_trailing_zeros(self, collection):
-        """Removes trailing zeroes from indexable collection of numbers"""
         index = len(collection) - 1
         while index >= 0 and collection[index] == 0:
             index -= 1

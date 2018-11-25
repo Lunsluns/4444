@@ -1,9 +1,6 @@
-
 from __future__ import absolute_import
 from __future__ import division, print_function, unicode_literals
-
 import nltk.stem.snowball as nltk_stemmers_module
-
 import sys
 sys.path.append('..')
 from _compat import to_unicode

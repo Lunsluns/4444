@@ -1,26 +1,19 @@
-
-
 from __future__ import absolute_import
 from __future__ import division, print_function, unicode_literals
-
 import math
-
 try:
     import numpy
 except ImportError:
     numpy = None
-
 from ._summirizer import AbstractSummarizer
 import sys
 sys.path.append('..')
 from _compat import Counter
 
 
+#lexRank is an nlp algorithm based upon graph based centrality as salience
 class LexRankSummarizer(AbstractSummarizer):
-    """
-    LexRank: Graph-based Centrality as Salience in Text Summarization
-    Source: http://tangra.si.umich.edu/~radev/lexrank/lexrank.pdf
-    """
+
     threshold = 0.1
     epsilon = 0.1
     _stop_words = frozenset()
@@ -90,11 +83,10 @@ class LexRankSummarizer(AbstractSummarizer):
 
         return idf_metrics
 
+    #creates matrix with shape |sentences|x|sentences|
     def _create_matrix(self, sentences, threshold, tf_metrics, idf_metrics):
-        """
-        Creates matrix of shape |sentences|×|sentences|.
-        """
-        # create matrix |sentences|×|sentences| filled with zeroes
+
+        # creates matrix |sentences|×|sentences| filled with zeroes
         sentences_count = len(sentences)
         matrix = numpy.zeros((sentences_count, sentences_count))
         degrees = numpy.zeros((sentences_count, ))
@@ -118,29 +110,29 @@ class LexRankSummarizer(AbstractSummarizer):
 
         return matrix
 
+    """
+            Computes idf-modified-cosine(sentence1, sentence2).
+            Cosine similarity of these two sentences (vectors) A, B is computed as cos(x, y) = A . B / (|A| . |B|)
+            Sentences are represented as vector TF*IDF metrics.
+            :param sentence1:
+                Iterable object where every item represents word of the first sentence.
+            :param sentence2:
+                Iterable object where every item represents word of the second sentence.
+            :type tf1: dict
+            :param tf1:
+                Term frequencies of words from 1st sentence.
+            :type tf2: dict
+            :param tf2:
+                Term frequencies of words from 2nd sentence
+            :type idf_metrics: dict
+            :param idf_metrics:
+                Inverted document metrics of the sentences. Every sentence is treated as document for this algorithm.
+            :rtype: float
+            :return:
+                Returns -1.0 for opposite similarity, 1.0 for the same sentence and zero for no similarity between sentences.
+            """
     @staticmethod
     def cosine_similarity(sentence1, sentence2, tf1, tf2, idf_metrics):
-        """
-        We compute idf-modified-cosine(sentence1, sentence2) here.
-        It's cosine similarity of these two sentences (vectors) A, B computed as cos(x, y) = A . B / (|A| . |B|)
-        Sentences are represented as vector TF*IDF metrics.
-        :param sentence1:
-            Iterable object where every item represents word of 1st sentence.
-        :param sentence2:
-            Iterable object where every item represents word of 2nd sentence.
-        :type tf1: dict
-        :param tf1:
-            Term frequencies of words from 1st sentence.
-        :type tf2: dict
-        :param tf2:
-            Term frequencies of words from 2nd sentence
-        :type idf_metrics: dict
-        :param idf_metrics:
-            Inverted document metrics of the sentences. Every sentence is treated as document for this algorithm.
-        :rtype: float
-        :return:
-            Returns -1.0 for opposite similarity, 1.0 for the same sentence and zero for no similarity between sentences.
-        """
         unique_words1 = frozenset(sentence1)
         unique_words2 = frozenset(sentence2)
         common_words = unique_words1 & unique_words2

@@ -1,22 +1,15 @@
-# -*- coding: utf-8 -*-
-
 from __future__ import absolute_import
 from __future__ import division, print_function, unicode_literals
-
 import math
-
 try:
     import numpy
 except ImportError:
     numpy = None
-
 from ._summirizer import AbstractSummarizer
 
 
+#TextRank Implementation: a graph based text ranking algorithm
 class TextRankSummarizer(AbstractSummarizer):
-    """An implementation of TextRank algorithm for summarization.
-    Source: https://web.eecs.umich.edu/~mihalcea/papers/mihalcea.emnlp04.pdf
-    """
     epsilon = 1e-4
     damping = 0.85
     _stop_words = frozenset()
@@ -40,22 +33,22 @@ class TextRankSummarizer(AbstractSummarizer):
     @staticmethod
     def _ensure_dependencies_installed():
         if numpy is None:
-            raise ValueError("LexRank summarizer requires NumPy. Please, install it by command 'pip install numpy'.")
+            raise ValueError("TextRank summarizer requires NumPy. Please, install it by command 'pip install numpy'.")
 
     def rate_sentences(self, document):
         matrix = self._create_matrix(document)
         ranks = self.power_method(matrix, self.epsilon)
         return {sent: rank for sent, rank in zip(document.sentences, ranks)}
 
+    """Create a stochastic matrix for TextRank.
+    Element at row i and column j of the matrix corresponds to the similarity of sentence i
+    and j, where the similarity is computed as the number of common words between them divided
+    by their sum of logarithm of their lengths. After such matrix is created, it is turned into
+    a stochastic matrix by normalizing over columns i.e. making the columns sum to one. TextRank
+    uses PageRank algorithm with damping, so a damping factor is incorporated.
+    The resulting matrix is a stochastic matrix ready for power method.
+    """
     def _create_matrix(self, document):
-        """Create a stochastic matrix for TextRank.
-        Element at row i and column j of the matrix corresponds to the similarity of sentence i
-        and j, where the similarity is computed as the number of common words between them, divided
-        by their sum of logarithm of their lengths. After such matrix is created, it is turned into
-        a stochastic matrix by normalizing over columns i.e. making the columns sum to one. TextRank
-        uses PageRank algorithm with damping, so a damping factor is incorporated as explained in
-        TextRank's paper. The resulting matrix is a stochastic matrix ready for power method.
-        """
         sentences_as_words = [self._to_words_set(sent) for sent in document.sentences]
         sentences_count = len(sentences_as_words)
         weights = numpy.zeros((sentences_count, sentences_count))

@@ -1,8 +1,6 @@
 #This code ensures that the algorithms could be compatible with python 2 as well as 3
-
 from __future__ import absolute_import
 from __future__ import division, print_function, unicode_literals
-
 from sys import version_info
 
 

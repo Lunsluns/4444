@@ -1,7 +1,5 @@
-
 from __future__ import absolute_import
 from __future__ import division, print_function, unicode_literals
-
 from itertools import chain
 import sys
 sys.path.append('...')
@@ -10,7 +8,7 @@ from utils import cached_property
 #sys.path.append('.')
 from ._sentence import Sentence
 
-#this file handles sentences, headings and words, it defines the paragraph object
+#handles sentences, headings, and words; defines the paragraph object
 @unicode_compatible
 class Paragraph(object):
     __slots__ = (
