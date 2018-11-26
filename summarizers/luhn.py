@@ -5,7 +5,7 @@ import sys
 sys.path.append('..')
 from models.tf import TfDocumentModel
 
-#Luhn measures word significance by frequency
+#Luhn measures significance by word frequency
 class LuhnSummarizer(AbstractSummarizer):
     max_gap_size = 4
     # TODO: better recognition of significant words (automatic)
@@ -31,7 +31,7 @@ class LuhnSummarizer(AbstractSummarizer):
 
         model = TfDocumentModel(words)
 
-        # take only best `significant_percentage` % words
+        # take only best significant_percentage words
         best_words_count = int(len(words) * self.significant_percentage)
         words = model.most_frequent_terms(best_words_count)
 

@@ -40,11 +40,11 @@ class TextRankSummarizer(AbstractSummarizer):
         ranks = self.power_method(matrix, self.epsilon)
         return {sent: rank for sent, rank in zip(document.sentences, ranks)}
 
-    """Create a stochastic matrix for TextRank.
+    """Creates a stochastic matrix for TextRank.
     Element at row i and column j of the matrix corresponds to the similarity of sentence i
     and j, where the similarity is computed as the number of common words between them divided
     by their sum of logarithm of their lengths. After such matrix is created, it is turned into
-    a stochastic matrix by normalizing over columns i.e. making the columns sum to one. TextRank
+    a stochastic matrix by normalizing over columns (making the columns sum to one). TextRank
     uses PageRank algorithm with damping, so a damping factor is incorporated.
     The resulting matrix is a stochastic matrix ready for power method.
     """
@@ -58,11 +58,9 @@ class TextRankSummarizer(AbstractSummarizer):
                 weights[i, j] = self._rate_sentences_edge(words_i, words_j)
         weights /= weights.sum(axis=1)[:, numpy.newaxis]
 
-        # In the original paper, the probability of randomly moving to any of the vertices
-        # is NOT divided by the number of vertices. Here we do divide it so that the power
-        # method works; without this division, the stationary probability blows up. This
-        # should not affect the ranking of the vertices so we can use the resulting stationary
-        # probability as is without any postprocessing.
+        # In the original algorithm, the probability of randomly moving to any of the vertices
+        # is NOT divided by the number of vertices. Here we do divide it so that the power method works
+        # This should not affect the ranking of the vertices so we can use the resulting stationary probability as is without any postprocessing.
         return numpy.full((sentences_count, sentences_count), (1.-self.damping) / sentences_count) \
             + self.damping * weights
 

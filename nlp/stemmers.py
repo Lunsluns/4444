@@ -10,7 +10,7 @@ from utils import normalize_language
 def null_stemmer(object):
     return to_unicode(object).lower()
 
-
+#reduces words to their stem
 class Stemmer(object):
 
     def __init__(self, language):

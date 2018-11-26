@@ -6,7 +6,7 @@ sys.path.append('...')
 from utils import cached_property
 from _compat import unicode_compatible
 
-#this file handles document/DOM functions, such as returning and helping to interpret paragraphs, sentences, headings, words etc.
+#this file handles document/ODM functions, such as returning and helping to interpret paragraphs, sentences, headings, words etc.
 @unicode_compatible
 class ObjectDocumentModel(object):
     def __init__(self, paragraphs):
