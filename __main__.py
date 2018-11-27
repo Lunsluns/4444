@@ -23,7 +23,7 @@ from docopt import docopt
 from .utils import ItemsCount, get_stop_words, read_stop_words, fetch_url
 from ._compat import to_string, to_unicode, to_bytes, PY3
 from .nlp.tokenizers import Tokenizer
-from .parsers.html import HtmlParser
+from .parser.html import HtmlParser
 from .summarizers.luhn import LuhnSummarizer
 from .summarizers.text_rank import TextRankSummarizer
 from .summarizers.lex_rank import LexRankSummarizer
