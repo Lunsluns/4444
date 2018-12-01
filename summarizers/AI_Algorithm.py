@@ -1,7 +1,6 @@
 from __future__ import absolute_import
 from __future__ import division, print_function, unicode_literals
 from ._summirizer import AbstractSummarizer
-from scipy import stats
 #from stop_words import get_stop_words
 import sys
 sys.path.append('..')
@@ -30,7 +29,7 @@ class JackieSummarizer(AbstractSummarizer):
     def _get_significant_words(self, words):
         word_list = map(self.normalize_word, words)
         word_list = tuple(self.stem_word(w) for w in word_list if w not in self._stop_words)
-        print(word_list)
+        #print(word_list)
         model = TfDocumentModel(word_list)
 
         # take only words that occur more than once and are significant (not stop words)
