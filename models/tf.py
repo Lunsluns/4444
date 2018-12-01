@@ -57,4 +57,3 @@ class TfDocumentModel(object):
 
     def __repr__(self):
         return "<TfDocumentModel %s>" % pformat(self._terms)
-    
