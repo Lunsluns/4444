@@ -28,7 +28,7 @@ class JackieSummarizer(AbstractSummarizer):
 
     def _get_significant_words(self, words):
         word_list = map(self.normalize_word, words)
-        word_list = tuple(self.stem_word(w) for w in word_list if w not in self._stop_words)  
+        word_list = tuple(self.stem_word(w) for w in word_list if w not in self._stop_words)
         #print(word_list) .
         model = TfDocumentModel(word_list)
 

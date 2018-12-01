@@ -20,7 +20,7 @@ SENTENCES_COUNT = 10
 
 if __name__ == "__main__":
 
-    url = "https://www.npr.org/2018/10/21/658921379/futuristic-dreams-turn-to-nightmare-in-electric-state"
+    url = "https://www.npr.org/2018/11/26/670746252/ukraine-considers-martial-law-after-russia-seizes-its-ships-near-crimea"
     parser = HtmlParser.from_url(url, Tokenizer(LANGUAGE))
     # or for plain text files
     # parser = PlaintextParser.from_file("document.txt", Tokenizer(LANGUAGE))
@@ -30,3 +30,9 @@ if __name__ == "__main__":
     for sentence in summarizer(parser.document, SENTENCES_COUNT):
             print(sentence)
 
+    counter = 0
+    for item in summarizer(parser.document, SENTENCES_COUNT):
+        for word in parser.tokenize_words(item):
+            counter += 1
+    print("")
+    print(" wordcount ", counter)
