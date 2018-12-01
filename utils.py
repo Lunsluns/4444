@@ -54,7 +54,7 @@ def cached_property(getter):
 
 
 def expand_resource_path(path):
-    directory = dirname(sys.modules["sumy"].__file__)
+    directory = dirname(sys.modules["4444"].__file__)
     directory = abspath(directory)
     return join(directory, to_string("data"), to_string(path))
 
