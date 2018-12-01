@@ -7,7 +7,7 @@ from nlp.tokenizers import Tokenizer
 from summarizers.lex_rank import LexRankSummarizer as lexSum
 from summarizers.luhn import LuhnSummarizer as luhnSum
 from summarizers.text_rank import TextRankSummarizer as textSumi
-from summarizers.Jackie import JackieSummarizer as jackieSum
+from summarizers.AI_Algorithm import JackieSummarizer as jackieSum
 from nlp.stemmers import Stemmer
 from utils import get_stop_words
 
