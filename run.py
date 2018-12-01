@@ -8,6 +8,7 @@ from summarizers.text_rank import TextRankSummarizer as textSum
 from nlp.stemmers import Stemmer
 from utils import get_stop_words
 from tkinter import *
+from summarizers.AI_Algorithm import JackieSummarizer as jackieSum
 
 LANGUAGE = "english"
 SENTENCES_COUNT = 10
@@ -76,6 +77,8 @@ if __name__ == "__main__":
        buttonLuhn.place(x=300, y=10)
        buttonText = Button(newWindow, text="TextRank", command=lambda: display(mainDisplay, HtmlParser.from_url(url, Tokenizer(LANGUAGE)), textSum(Stemmer(LANGUAGE))))
        buttonText.place(x=350, y=10)
+       buttonPersonal = Button(newWindow, text="Ours", command=lambda: display(mainDisplay, HtmlParser.from_url(url, Tokenizer(LANGUAGE)), jackieSum(Stemmer(LANGUAGE))))
+       buttonPersonal.place(x=425, y=10)
        mainDisplay.place(x=0, y=50)
        newWindow.mainloop()
 
