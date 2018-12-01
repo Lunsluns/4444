@@ -20,7 +20,7 @@ SENTENCES_COUNT = 10
 
 if __name__ == "__main__":
 
-    url = "https://www.cnn.com/2018/11/27/us/north-carolina-missing-teen-search-body-found/index.html"
+    url = "https://www.npr.org/2018/10/21/658921379/futuristic-dreams-turn-to-nightmare-in-electric-state"
     parser = HtmlParser.from_url(url, Tokenizer(LANGUAGE))
     # or for plain text files
     # parser = PlaintextParser.from_file("document.txt", Tokenizer(LANGUAGE))
@@ -29,3 +29,4 @@ if __name__ == "__main__":
     summarizer.stop_words = get_stop_words(LANGUAGE)
     for sentence in summarizer(parser.document, SENTENCES_COUNT):
             print(sentence)
+
