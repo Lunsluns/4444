@@ -62,7 +62,7 @@ def expand_resource_path(path):
 def get_stop_words(language):
     language = normalize_language(language)
     try:
-        stopwords_data = pkgutil.get_data("sumy", "data/stopwords/%s.txt" % language)
+        stopwords_data = pkgutil.get_data("4444", "data/stopwords/%s.txt" % language)
     except IOError as e:
         raise LookupError("Stop-words are not available for language %s." % language)
     return parse_stop_words(stopwords_data)
