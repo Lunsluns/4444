@@ -7,7 +7,7 @@ from nlp.tokenizers import Tokenizer
 from summarizers.lex_rank import LexRankSummarizer as lexSum
 from summarizers.luhn import LuhnSummarizer as luhnSum
 from summarizers.text_rank import TextRankSummarizer as textSumi
-from summarizers.AI_Algorithm import ourSummarizer as jackieSum
+from summarizers.AI_Algorithm import ourSummarizer as ourSum
 from nlp.stemmers import Stemmer
 from utils import get_stop_words
 
@@ -21,6 +21,7 @@ SENTENCES_COUNT = 10
 if __name__ == "__main__":
 
     url = "https://www.livescience.com/64184-mini-placentas-lab-grown.html"
+    parser = HtmlParser.from_url(url, Tokenizer(LANGUAGE))
     # or for plain text files
     # parser = PlaintextParser.from_file("document.txt", Tokenizer(LANGUAGE))
     stemmer = Stemmer(LANGUAGE)
