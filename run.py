@@ -8,7 +8,7 @@ from summarizers.text_rank import TextRankSummarizer as textSum
 from nlp.stemmers import Stemmer
 from utils import get_stop_words
 from tkinter import *
-from summarizers.AI_Algorithm import JackieSummarizer as jackieSum
+from summarizers.AI_Algorithm import ourSummarizer as ourSum
 
 LANGUAGE = "english"
 SENTENCES_COUNT = 10
@@ -42,7 +42,7 @@ if __name__ == "__main__":
        summarizer.stop_words = get_stop_words(LANGUAGE)
 
 
-       ''''#USED TO COUNT THE WORDS IN A SUMMARY
+       #USED TO COUNT THE WORDS IN A SUMMARY
        global displayCount
        counter = 0
        displayCount += 1
@@ -50,7 +50,8 @@ if __name__ == "__main__":
            for word in parser.tokenize_words(item):
                counter+=1
        print(" wordcount ", counter)
-       if displayCount%3==0:
+       print("--------------------")
+       ''''if displayCount%3==0:
            print("--------ARTICLE ",runCount+26,"------------")
        #END SUMMARY COUNT CODE'''
 
@@ -63,7 +64,7 @@ if __name__ == "__main__":
        url = e.get()
        #root.destroy()
        newWindow = Tk()
-       ''''#ADDED TO COUNT RUNS
+       '''#ADDED TO COUNT RUNS
        global runCount
        runCount +=1
        #END'''
@@ -77,7 +78,7 @@ if __name__ == "__main__":
        buttonLuhn.place(x=300, y=10)
        buttonText = Button(newWindow, text="TextRank", command=lambda: display(mainDisplay, HtmlParser.from_url(url, Tokenizer(LANGUAGE)), textSum(Stemmer(LANGUAGE))))
        buttonText.place(x=350, y=10)
-       buttonPersonal = Button(newWindow, text="Ours", command=lambda: display(mainDisplay, HtmlParser.from_url(url, Tokenizer(LANGUAGE)), jackieSum(Stemmer(LANGUAGE))))
+       buttonPersonal = Button(newWindow, text="Ours", command=lambda: display(mainDisplay, HtmlParser.from_url(url, Tokenizer(LANGUAGE)), ourSum(Stemmer(LANGUAGE))))
        buttonPersonal.place(x=425, y=10)
        mainDisplay.place(x=0, y=50)
        newWindow.mainloop()

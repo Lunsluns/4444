@@ -6,7 +6,7 @@ import sys
 sys.path.append('..')
 from models.tf import TfDocumentModel
 
-class JackieSummarizer(AbstractSummarizer):
+class ourSummarizer(AbstractSummarizer):
     max_gap_size = 4 #these are unusued
     significant_percentage = 1 #unused
     _stop_words = frozenset()
@@ -18,6 +18,8 @@ class JackieSummarizer(AbstractSummarizer):
     @stop_words.setter
     def stop_words(self, words):
         self._stop_words = frozenset(map(self.normalize_word, words))
+        #print(self.stop_words)
+
 
     def __call__(self, document, sentences_count):
         words = self._get_significant_words(document.words)
@@ -29,7 +31,6 @@ class JackieSummarizer(AbstractSummarizer):
     def _get_significant_words(self, words):
         word_list = map(self.normalize_word, words)
         word_list = tuple(self.stem_word(w) for w in word_list if w not in self._stop_words)
-        #print(word_list) .
         model = TfDocumentModel(word_list)
 
         # take only words that occur more than once and are significant (not stop words)
