@@ -49,7 +49,7 @@ class ourSummarizer(AbstractSummarizer):
     def _get_word_ratings(self, words):
         # rate words by seperately dividing the amount that they occur by the amount of each other word, and then summing the results
         # rate comparisons to words with highest amount higher than words with low amounts 
-        # ex: (word1amount/word2amount)*(1-0/n) + (word1amount/word3amount)*(1-1/n) + ... + (word1amount/wordnamount) * (1 - n/n)
+        # ex: (word1amount/word2amount)*(1-1/n) + (word1amount/word3amount)*(1-2/n) + ... + (word1amount/wordnamount) * (1 - n/n)
         # no point in using frequency instead of amount b/c denominator would get divided out
         word_rating = {}
         i = 0
