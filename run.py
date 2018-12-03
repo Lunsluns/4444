@@ -46,12 +46,12 @@ if __name__ == "__main__":
        global displayCount
        counter = 0
        displayCount += 1
-       for item in summarizer(parser.document,SENTENCES_COUNT):
+       '''for item in summarizer(parser.document,SENTENCES_COUNT):
            for word in parser.tokenize_words(item):
                counter+=1
        print(" wordcount ", counter)
        print("--------------------")
-       ''''if displayCount%3==0:
+       if displayCount%3==0:
            print("--------ARTICLE ",runCount+26,"------------")
        #END SUMMARY COUNT CODE'''
 
